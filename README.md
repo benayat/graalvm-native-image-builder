@@ -6,7 +6,7 @@
 the aot process requires knowledge of reflection, JNI, and more - otherwise, it won't work. 
 - working with graalvm with windows was a pain, so I used docker to make it easier.
 - lately, the native maven plugin for graalvm integration has been doing a good job, and it looks like it's ready for production deployment.
-- for example, when bringing up a k8s cluster, imagine a daemonset which deploys a pod in all nodes in lest then 1 second. 
+- for example, when bringing up a k8s cluster, imagine a daemonset which deploys a pod in all nodes in less than 1 second. 
 #### why I didn't use the buildpack with the "buildImage" goal?
 - both maven and gradle, give you an option out of the box to create a ready-to-use docker image with your app - the "buildImage" goal.
 - unfortunately they use the terrible distroless image, which may sound safer and has less attack surface, it's just terrible to use since it doesn't have a terminal to debug. 
@@ -29,7 +29,7 @@ the aot process requires knowledge of reflection, JNI, and more - otherwise, it 
 - use the relevant args for your env.
 - if needed, create the necessary base image with `docker build` command.
 - run docker compose up.(for jvm mode - just use `docker run` and supply the relevant arg)
-- for semi-static mode, include the build arg `-H:+StaticExecutableWithDynamicLibC` in your pom.xml file. 
+- for semi-static mode, include the build arg `-H:+StaticExecutableWithDynamicLibC` in your pom.xml file. [example](https://github.com/benayat/spring-boot-stomp-native/blob/master/pom.xml)
 - for static mode, include the build args `--static --libc=musl` in your pom.xml.
 
 #### semi-static-mode:
@@ -40,6 +40,5 @@ the aot process requires knowledge of reflection, JNI, and more - otherwise, it 
 - using the base image with musl for static compilation, and a simple alpine for running the app.
 
 #### note:
-- I used my example [code](https://github.com/benayat/spring-boot-stomp-native) repo for this tutorial, which is a simple spring boot 3 app with stomp websocket. you can use yours, but change the build args first. 
-- 
+- I used my example [code](https://github.com/benayat/spring-boot-stomp-native) repo for this tutorial, which is a simple spring boot 3 app with stomp websocket. you can use yours, but change the build args first.
 - I gave up on graalvm/native-image docker image for the static mode, because it had issues with musl toolchain installation.
