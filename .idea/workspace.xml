@@ -4,24 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae666f31-9843-4b53-b947-4a520a9f0ff9" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/base-images/Dockerfile-base-musl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-images/Dockerfile-base-native-image" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semi-static-mode/Dockerfile-cached-m2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semi-static-mode/Dockerfile-multistage" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static-mode/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static-mode/docker-compose.yaml" afterDir="false" />
+    <list default="true" id="ae666f31-9843-4b53-b947-4a520a9f0ff9" name="Changes" comment="added docs">
+      <change afterPath="$PROJECT_DIR$/local-semi-static/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile-jvm" beforeDir="false" afterPath="$PROJECT_DIR$/jvm-mode/Dockerfile-jvm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile-multistage" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/semi-static-mode/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semi-static-mode/Dockerfile-cached-m2" beforeDir="false" afterPath="$PROJECT_DIR$/semi-static-mode/Dockerfile-cached-m2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semi-static-mode/Dockerfile-multistage" beforeDir="false" afterPath="$PROJECT_DIR$/semi-static-mode/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semi-static-mode/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/semi-static-mode/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static-mode/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/static-mode/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +75,7 @@
       <workItem from="1682353281316" duration="1741000" />
       <workItem from="1682355438688" duration="4139000" />
       <workItem from="1682420155901" duration="6571000" />
-      <workItem from="1682429664191" duration="3024000" />
+      <workItem from="1682429664191" duration="5092000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682081167173</created>
@@ -82,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682081167173</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added docs">
+      <created>1682433017987</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682433017987</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +99,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="added docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="added docs" />
   </component>
 </project>

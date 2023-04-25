@@ -1,4 +1,12 @@
+FROM alpine/git as git
+ARG GIT_PREFIX
+ARG USER_NAME
+ARG REPO_NAME
+WORKDIR /temp
+RUN git clone $GIT_PREFIX/$USER_NAME/$REPO_NAME.git .
+
 FROM native-image-offline
-COPY ./temp /app
+COPY --from=git ./temp /app
 WORKDIR /app
-ENTRYPOINT ./mvnw -Pnative package native:compile && /app/target/spring-websocket-demo
+# couldn't include args in entrypoint, so use your own exec name in the entrypoint.
+ENTRYPOINT chmod +x ./mvnw && ./mvnw -Pnative package native:compile && /app/target/spring-websocket-demo

@@ -21,6 +21,8 @@ the aot process requires knowledge of reflection, JNI, and more - otherwise, it 
 #### requirements: 
 - a spring boot 3 app, using java 17, including a maven wrapper ready for use.
 - you can use the example app here, or your own.
+- docker installed
+- 6-7gb available RAM.
 
 #### to run: 
 - choose your compilation type - dynamic, static, or semi-static, and open a terminal in the right folder.
@@ -39,3 +41,5 @@ the aot process requires knowledge of reflection, JNI, and more - otherwise, it 
 
 #### note:
 - I used my example [code](https://github.com/benayat/spring-boot-stomp-native) repo for this tutorial, which is a simple spring boot 3 app with stomp websocket. you can use yours, but change the build args first. 
+- 
+- I gave up on graalvm/native-image docker image for the static mode, because it had issues with musl toolchain installation.

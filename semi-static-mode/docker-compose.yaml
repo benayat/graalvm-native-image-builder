@@ -2,10 +2,10 @@ version: "3.9"
 services:
   app:
 #    image: graalvm-builder-app:multi-stage-1
-    image: graalvm-builder-app:single-stage-1
+    image: graalvm-builder-app:semi-static-1
     build:
-      dockerfile: Dockerfile
 #      dockerfile: Dockerfile
+      dockerfile: Dockerfile-cached-m2
       args:
         - REPO_NAME=spring-boot-stomp-native
         - USER_NAME=benayat
