@@ -1,15 +1,14 @@
-FROM ghcr.io/graalvm/graalvm-ce:latest as nativeBuilder
+FROM alpine/git as git
+ARG REPO_ADDRESS
+WORKDIR /git
+RUN git clone $REPO_ADDRESS .
+
+FROM graalvm-static-base:latest as nativeBuilder
 WORKDIR /app
-ARG GIT_PREFIX
-ARG USER_NAME
-ARG REPO_NAME
-ARG ARTIFACT_ID
-RUN microdnf install -y git
-RUN git clone $GIT_PREFIX/$USER_NAME/$REPO_NAME.git
-WORKDIR $REPO_NAME
+COPY --from=git /git .
 RUN chmod +x mvnw && ./mvnw -Pnative package && ./mvnw -Pnative native:compile
 
-FROM frolvlad/alpine-glibc
+FROM alpine:latest
 ARG ARTIFACT_ID
 ARG REPO_NAME
 WORKDIR app

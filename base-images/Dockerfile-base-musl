@@ -1,0 +1,11 @@
+FROM ghcr.io/graalvm/graalvm-ce:latest
+WORKDIR /tmp
+RUN gu install native-image
+RUN curl http://more.musl.cc/10/x86_64-linux-musl/x86_64-linux-musl-native.tgz -OJL \
+    && tar -xzvf x86_64-linux-musl-native.tgz
+RUN curl https://zlib.net/zlib-1.2.13.tar.gz -OJL && tar -xzvf zlib-1.2.13.tar.gz
+ARG TOOLCHAIN_DIR=/tmp/x86_64-linux-musl-native
+ENV CC=$TOOLCHAIN_DIR/bin/gcc
+WORKDIR zlib-1.2.13
+RUN  ./configure --prefix=$TOOLCHAIN_DIR --static && make && make install
+ENTRYPOINT /bin/bash

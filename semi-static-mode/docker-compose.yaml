@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  app:
+#    image: graalvm-builder-app:multi-stage-1
+    image: graalvm-builder-app:single-stage-1
+    build:
+      dockerfile: Dockerfile
+#      dockerfile: Dockerfile
+      args:
+        - REPO_NAME=spring-boot-stomp-native
+        - USER_NAME=benayat
+        - GIT_PREFIX=https://github.com
+        - ARTIFACT_ID=spring-websocket-demo
+    volumes:
+      - m2:/root/.m2
+volumes:
+  m2:
+    driver: local
+  target:
+    driver: local

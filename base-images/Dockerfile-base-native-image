@@ -1,0 +1,3 @@
+FROM ghcr.io/graalvm/graalvm-ce:latest as builder
+RUN gu install native-image
+ENTRYPOINT ["/bin/bash"]
